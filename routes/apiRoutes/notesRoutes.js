@@ -1,20 +1,26 @@
 
 const router = require('express').Router();
+const { createNewNote } = require('../../lib/notes');
 
 const  db = require('../../data/db');
-console.log(db);
 
 router.get('/notes', (req, res) => {
-    // console.log("data");
-    // res.json(data);//sends json to browser
 
     let result = db;
 
     if (result) {
-        res.json(result);
+        res.json(result);//sends json to browser
     } else {
         res.sendStatus(404);
     }
+
+});
+
+router.post('/notes', (req, res) => {
+    //console.log(req.body)//this is the data that is typed in by the user
+
+    const newNote = createNewNote(req.body, db);
+    res.json(newNote);
 
 });
 
