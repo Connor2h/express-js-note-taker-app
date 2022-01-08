@@ -25,7 +25,15 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
+    const { id } = req.params;//break request object into id
+
+    //search through database and find the id that matches the database id and store in noteIndex
+    const noteIndex = db.findIndex(p => p.id == id);
     
+    //splice out the noteIndex from the database json array
+    db.splice(noteIndex, 1);
+
+    return res.send();
 
 });
 
