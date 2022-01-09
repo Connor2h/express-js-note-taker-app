@@ -15,7 +15,7 @@ Application that can be used to write and save notes. This application will use 
 https://express-js-note-taker-app.herokuapp.com/
 
 ## Screenshot
-![image info](./public/assets/img/website.jpg)
+![website](https://user-images.githubusercontent.com/90579571/148664754-1db97b95-c135-4d5a-9f2f-b764e31691cd.JPG)
 
 ## Usage
 1. Run "npm i" to initialize with a package.json and also get express and uuid
